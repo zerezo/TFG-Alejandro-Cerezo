@@ -1,61 +1,61 @@
 # TFG-Alejandro-Cerezo
 Repositorio que alberga el código ejecutable del trabajo fin de grado del GITST
-# Simulador de Operaciones Multidominio (MDO) - Versión 4.0
+# Simulador de Operaciones Multidominio (MDO) - V4.0 Final
+
+![Versión](https://img.shields.io/badge/Versi%C3%B3n-4.0_Final-blue)
+![Ingeniería](https://img.shields.io/badge/TFG-Ingenier%C3%ADa_Telecomunicaciones-orange)
+![Framework](https://img.shields.io/badge/Marco-NIST_SP_800--30-red)
 
 ## 1. Descripción del Proyecto
-[cite_start]Este sistema es un simulador avanzado diseñado para el **Trabajo Fin de Grado (TFG) de Ingeniería de Telecomunicaciones**. [cite_start]Su objetivo es evaluar la resiliencia y el estado de misiones militares en entornos multidominio (Tierra, Mar, Aire, Espacio y Ciberespacio) utilizando un motor de cálculo basado en el estándar **NIST SP 800-30**[cite: 4, 119].
+Este proyecto constituye la versión final del **Simulador de Operaciones Multidominio (MDO)** desarrollado para el Trabajo Fin de Grado[cite: 1]. El sistema permite modelar escenarios militares complejos donde interactúan activos y amenazas en los dominios de Tierra, Aire, Mar, Espacio y Ciberespacio[cite: 1, 2].
 
-[cite_start]La **Versión 4.0** introduce un salto tecnológico fundamental: la **Integración NIST-Semántica Definitiva**. [cite_start]A diferencia de versiones anteriores basadas en lógica imperativa, esta versión actúa como un **Sistema Experto**[cite: 10]. [cite_start]El sistema delega la "inteligencia" a una ontología OWL, donde el razonador lógico **HermiT** analiza el grafo de activos y amenazas para inferir automáticamente si una misión es un éxito o un fracaso[cite: 11, 13, 118].
+La gran innovación de esta **Versión 4.0** es el salto de una lógica imperativa (basada en cálculos manuales en Python) a un **Sistema Experto basado en Inferencia Semántica**[cite: 1]. El sistema utiliza el razonador lógico **HermiT** para determinar el éxito o fracaso de una misión mediante el análisis de un grafo de conocimiento, eliminando la necesidad de lógica condicional rígida en el código fuente[cite: 1, 9].
 
-## 2. Instalación y Requisitos (Windows)
+## 2. Instalación y Configuración (Windows)
 
-Para ejecutar este simulador en un PC con Windows, siga estos pasos y asegúrese de contar con las siguientes tecnologías:
+Para desplegar el simulador en un entorno local Windows, siga estos pasos:
 
-### Requisitos de Software
-* [cite_start]**Python 3.x**: Lenguaje principal para la ejecución del script y gestión de datos[cite: 5, 21].
-* [cite_start]**Java Runtime Environment (JRE)**: Necesario para que el razonador **HermiT** pueda realizar la inferencia semántica[cite: 13, 118].
-* [cite_start]**Protégé**: Recomendado para visualizar o editar la taxonomía base y las reglas de la ontología (`.rdf`)[cite: 2, 16].
+### Tecnologías Necesarias
+*   **Python 3.10+**: Motor de ejecución para la integración y generación de reportes[cite: 9].
+*   **Java Runtime Environment (JRE)**: Requisito indispensable para que el razonador semántico (`HermiT`) funcione correctamente[cite: 1, 9].
+*   **Archivos Base**: Asegúrese de tener en el mismo directorio:
+    *   `script_4.0_2.py`: Script principal de ejecución[cite: 9].
+    *   `Ontologia_31012026_2.rdf`: Ontología en formato OWL[cite: 3].
+    *   `mision_2.json`: Configuración del escenario táctico[cite: 2].
 
 ### Pasos de Instalación
-1.  **Instalar librerías de Python**: Abra una terminal y ejecute:
+1.  **Instalar dependencias**: Ejecute el siguiente comando en su terminal:
     ```bash
     pip install owlready2 fpdf
     ```
-    * `owlready2`: Permite la interacción entre Python y la ontología OWL[cite: 118].
-    * `fpdf`: Motor para la generación de los informes técnicos en PDF[cite: 21].
-
-2.  **Preparar archivos**: Asegúrese de tener en el mismo directorio:
-    * [cite_start]`script_4.0.py`: El código motor[cite: 21].
-    * [cite_start]`Ontologia_31012026.rdf`: La base de conocimiento semántica[cite: 20].
-    * [cite_start]`mision.json`: Archivo de configuración del escenario táctico[cite: 19].
-
-3.  **Ejecución**:
+2.  **Verificación**: Asegúrese de que el archivo `mision_2.json` esté configurado con los activos y niveles de criticidad deseados[cite: 2].
+3.  **Ejecución**: Lance el simulador mediante:
     ```bash
-    python script_4.0.py
+    python script_4.0_2.py
     ```
 
-## 3. Tecnologías y Ciclo de Vida del Sistema
+## 3. Tecnologías y Ciclo de Vida del Desarrollo
 
-El simulador utiliza un ecosistema tecnológico integrado para transformar datos brutos en decisiones estratégicas:
+El sistema se basa en una arquitectura de "Delegación de Inteligencia" dividida en las siguientes fases técnicas:
 
-### A. Modelado Semántico (OWL & Protégé)
-[cite_start]La estructura del conocimiento se define en una ontología que identifica Clases (Activos, Amenazas, Dominios) y sus relaciones[cite: 2, 16]. 
-* [cite_start]**Uso**: Se definen reglas de Lógica de Descripción (DL) para clasificar misiones degradadas o fracasadas basadas en la criticidad de los dominios afectados[cite: 18].
+### A. Modelado del Conocimiento (OWL & Protégé)
+Se utiliza una ontología formal en OWL (`Ontologia_31012026_2.rdf`) para definir la taxonomía de la misión[cite: 3].
+*   **Lógica de Descripción (DL)**: Se han definido clases disjuntas y reglas de inferencia para determinar estados de misión (Fracasada, Degradada, Exitosa) basándose en la afectación de dominios estratégicos.
 
-### B. Ingesta y Cálculo (Python & JSON)
-[cite_start]El escenario se carga dinámicamente mediante un archivo JSON que define los activos y su criticidad (Nivel 1 a 5)[cite: 3, 19].
-* **Marco Matemático NIST**: Python calcula la resiliencia dinámica. [cite_start]Por ejemplo, un dominio vital (C5) tiene un umbral de fallo del 20% de daños, mientras que uno de nivel C1 tolera hasta el 100%[cite: 7].
-* [cite_start]**Inyección de Datos**: Los porcentajes calculados se inyectan en las "Data Properties" de la ontología (`tieneAfectacionReal`, `tieneUmbral`)[cite: 11].
+### B. Análisis de Riesgos Cuantitativo (NIST SP 800-30)
+El sistema implementa el rigor matemático del framework NIST para evaluar el impacto de las amenazas[cite: 1].
+*   **Resiliencia Dinámica**: Se calcula el umbral de tolerancia de cada dominio mediante la fórmula:  
+    $Umbral = (6 - Nivel\_Criticidad) \times Factor\_Tolerancia\_Base$[cite: 1].
+*   **Inyección de Datos**: Python calcula los porcentajes de daño real y los inyecta en las propiedades de datos de la ontología (`tieneAfectacionReal`)[cite: 1, 9].
 
-### C. Inferencia Lógica (HermiT Reasoner)
-[cite_start]El sistema utiliza el razonador **HermiT** para realizar un análisis de segundo orden[cite: 11, 118].
-* [cite_start]**Uso**: El razonador evalúa el grafo: "Si el Dominio A está comprometido Y su nivel es C5, entonces la Misión es un FRACASO"[cite: 13]. [cite_start]Esto elimina la necesidad de bloques complejos de `if/else` en el código principal[cite: 5, 12].
+### C. Inferencia Semántica (HermiT)
+El núcleo de la Versión 4.0 es la delegación de la decisión final al razonador lógico[cite: 1].
+*   **Inferencia de Segundo Orden**: El razonador analiza si el daño inyectado supera el umbral calculado y clasifica automáticamente el dominio como `Comprometido` o `Degradado`[cite: 1, 9].
 
-### D. Generación de Informes (PDF)
-[cite_start]El resultado final es un informe técnico basado exclusivamente en la ontología, considerada la "Única Fuente de Verdad"[cite: 14, 15].
-* [cite_start]**Uso**: Se genera un PDF detallado con la matriz de criticidad, el inventario táctico y el veredicto final inferido por el razonador[cite: 21, 108].
+### D. Generación de Informes Técnicos (FPDF)
+La salida oficial del sistema son reportes PDF detallados (ej. `Report_Operación_Muro_Azul_Defensa_Costera_V4_Definitivo_2.pdf`)[cite: 8, 9].
+*   **Single Source of Truth**: El informe se genera leyendo exclusivamente las inferencias realizadas por la ontología, garantizando que el veredicto tenga respaldo lógico formal[cite: 1].
 
 ---
-**Autor**: Alejandro Cerezo  
-**Proyecto**: Trabajo Fin de Grado - Ingeniería de Telecomunicaciones  
-[cite_start]**Versión**: 4.0 (Integración NIST-Semántica Definitiva)
+**Autor:** Alejandro Cerezo  
+**Proyecto:** Trabajo Fin de Grado - Ingeniería de Telecomunicaciones (2026)[cite: 1].
