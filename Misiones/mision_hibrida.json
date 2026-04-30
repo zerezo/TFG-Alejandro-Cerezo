@@ -1,0 +1,31 @@
+{
+    "configuracion_mision": {
+        "titulo": "Operación Blackout Digital",
+        "descripcion": "El enemigo intenta cegar nuestros sensores orbitales y colapsar la red de mando. La prioridad absoluta es mantener el Ciberespacio y el Espacio operativos.",
+        "factor_tolerancia_base": 20,
+        "niveles_criticidad": {
+            "Tierra": 1,
+            "Aire": 2,
+            "Espacio": 5,
+            "Ciberespacio": 5,
+            "Mar": 1
+        }
+    },
+    "activos": [
+        { "id": "Satelite_Comms", "tipo": "Satelite", "dominio": "Espacio" },
+        { "id": "Datacenter_Principal", "tipo": "DataCenter", "dominio": "Ciberespacio" },
+        { "id": "Guardia_Puerta", "tipo": "Humano", "dominio": "Tierra" }
+    ],
+    "amenazas": [
+        { 
+            "id": "Malware_Wiper", 
+            "tipo": "Hacking", 
+            "dominio_despliegue": "Ciberespacio" 
+        },
+        {
+            "id": "Misil_ASAT",
+            "tipo": "MisilTerrestre",
+            "dominio_despliegue": "Tierra"
+        }
+    ]
+}

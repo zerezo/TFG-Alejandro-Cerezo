@@ -1,0 +1,26 @@
+{
+    "configuracion_mision": {
+        "titulo": "Defensa Base Acorazada",
+        "descripcion": "Protección de la columna blindada en tránsito por el valle. Se espera fuerte resistencia de artillería y misiles antitanque.",
+        "factor_tolerancia_base": 20,
+        "niveles_criticidad": {
+            "Tierra": 5,
+            "Aire": 3,
+            "Espacio": 1,
+            "Ciberespacio": 2,
+            "Mar": 1
+        }
+    },
+    "activos": [
+        { "id": "Leopard_Lider", "tipo": "Tanque", "dominio": "Tierra" },
+        { "id": "Pizarro_Apoyo", "tipo": "Tanque", "dominio": "Tierra" },
+        { "id": "Drone_Vigilancia", "tipo": "Aeronave", "dominio": "Aire" }
+    ],
+    "amenazas": [
+        { 
+            "id": "Bateria_Kornet", 
+            "tipo": "MisilTerrestre", 
+            "dominio_despliegue": "Tierra" 
+        }
+    ]
+}

@@ -1,0 +1,661 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.tgf-alejandro.cerezo.es/ontologias/MDO/"
+     xml:base="http://www.tgf-alejandro.cerezo.es/ontologias/MDO/"
+     xmlns:MDO="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#objetivo_primario -->
+
+    <owl:AnnotationProperty rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#objetivo_primario"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#afecta_a -->
+
+    <owl:ObjectProperty rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#afecta_a">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#es_afectado_por"/>
+        <rdfs:domain rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Amenaza"/>
+        <rdfs:range rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Activo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ataca_en_dominio -->
+
+    <owl:ObjectProperty rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ataca_en_dominio">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Amenaza"/>
+        <rdfs:range rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#depende_de -->
+
+    <owl:ObjectProperty rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#depende_de">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Activo"/>
+        <rdfs:range rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Activo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#es_afectado_por -->
+
+    <owl:ObjectProperty rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#es_afectado_por">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#involucraDominio -->
+
+    <owl:ObjectProperty rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#involucraDominio">
+        <rdfs:domain rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mision"/>
+        <rdfs:range rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#opera_en -->
+
+    <owl:ObjectProperty rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#opera_en">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Activo"/>
+        <rdfs:range rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#tieneCriticidad -->
+
+    <owl:ObjectProperty rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#tieneCriticidad">
+        <rdfs:domain rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+        <rdfs:range rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Nivel_Criticidad"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#tieneAfectacionReal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#tieneAfectacionReal">
+        <rdfs:domain rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#tieneCriticidadNivel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#tieneCriticidadNivel">
+        <rdfs:domain rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#tieneUmbralTolerancia -->
+
+    <owl:DatatypeProperty rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#tieneUmbralTolerancia">
+        <rdfs:domain rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Activo -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Activo">
+        <owl:disjointWith rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Amenaza"/>
+        <owl:disjointWith rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ActivoEnRiesgo -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ActivoEnRiesgo">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Activo"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#es_afectado_por"/>
+                        <owl:someValuesFrom rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Amenaza"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Activo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ActivoFisico -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ActivoFisico">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Activo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ActivoLogico -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ActivoLogico">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Activo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Aeronave -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Aeronave">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Vehiculo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Amenaza -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Amenaza"/>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#AmenazaCinetica -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#AmenazaCinetica">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Amenaza"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#AmenazaNoCinetica -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#AmenazaNoCinetica">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Amenaza"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Antena -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Antena">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ActivoFisico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#CorteLuz -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#CorteLuz">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#AmenazaNoCinetica"/>
+        <MDO:objetivo_primario>Servidor, DataCenter</MDO:objetivo_primario>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#DataCenter -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#DataCenter">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ActivoFisico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Datos -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Datos">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ActivoLogico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio_Comprometido -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio_Comprometido">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio_Degradado -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio_Degradado">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio_Operativo -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio_Operativo">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Embarcacion -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Embarcacion">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Vehiculo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Frecuencias -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Frecuencias">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ActivoLogico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Hacking -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Hacking">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#AmenazaNoCinetica"/>
+        <MDO:objetivo_primario>Software, Servidor, DataCenter</MDO:objetivo_primario>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Humano -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Humano">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ActivoFisico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Jamming -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Jamming">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#AmenazaNoCinetica"/>
+        <MDO:objetivo_primario>Frecuencias</MDO:objetivo_primario>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mina -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mina">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#AmenazaCinetica"/>
+        <MDO:objetivo_primario>Tanque, Humano</MDO:objetivo_primario>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Misil -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Misil">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#AmenazaCinetica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#MisilAcuatico -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#MisilAcuatico">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Misil"/>
+        <MDO:objetivo_primario>Embarcacion, Submarino</MDO:objetivo_primario>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#MisilAntiaereo -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#MisilAntiaereo">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Misil"/>
+        <MDO:objetivo_primario>Aeronave</MDO:objetivo_primario>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#MisilTerrestre -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#MisilTerrestre">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Misil"/>
+        <MDO:objetivo_primario>Tanque, Humano, Sensor, Antena, DataCenter, Servidor</MDO:objetivo_primario>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mision -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mision"/>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mision_Degradada -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mision_Degradada">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mision"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#involucraDominio"/>
+                        <owl:someValuesFrom rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio_Degradado"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mision"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mision_Exitosa -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mision_Exitosa">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mision"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mision_Fracasada -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mision_Fracasada">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mision"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#involucraDominio"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio_Comprometido"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#tieneCriticidad"/>
+                                        <owl:hasValue rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#C5"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mision"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Nivel_Criticidad -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Nivel_Criticidad"/>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Ramsomware -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Ramsomware">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#AmenazaNoCinetica"/>
+        <MDO:objetivo_primario>Servidor</MDO:objetivo_primario>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#RoboDatos -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#RoboDatos">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#AmenazaNoCinetica"/>
+        <MDO:objetivo_primario>Datos</MDO:objetivo_primario>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Satelite -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Satelite">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ActivoFisico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Sensor -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ActivoFisico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Servidor -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Servidor">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ActivoFisico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Software -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Software">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ActivoLogico"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Submarino -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Submarino">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Vehiculo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Tanque -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Tanque">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Vehiculo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Vehiculo -->
+
+    <owl:Class rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Vehiculo">
+        <rdfs:subClassOf rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#ActivoFisico"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Aire -->
+
+    <owl:NamedIndividual rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Aire">
+        <rdf:type rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#C1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#C1">
+        <rdf:type rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Nivel_Criticidad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#C2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#C2">
+        <rdf:type rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Nivel_Criticidad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#C3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#C3">
+        <rdf:type rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Nivel_Criticidad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#C4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#C4">
+        <rdf:type rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Nivel_Criticidad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#C5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#C5">
+        <rdf:type rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Nivel_Criticidad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Ciberespacio -->
+
+    <owl:NamedIndividual rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Ciberespacio">
+        <rdf:type rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Degradacion -->
+
+    <owl:NamedIndividual rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Degradacion">
+        <owl:differentFrom rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Destruccion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Destruccion -->
+
+    <owl:NamedIndividual rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Destruccion"/>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Espacio -->
+
+    <owl:NamedIndividual rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Espacio">
+        <rdf:type rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mar -->
+
+    <owl:NamedIndividual rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mar">
+        <rdf:type rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Tierra -->
+
+    <owl:NamedIndividual rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Tierra">
+        <rdf:type rdf:resource="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Activo"/>
+            <rdf:Description rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Amenaza"/>
+            <rdf:Description rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Dominio"/>
+            <rdf:Description rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mision"/>
+            <rdf:Description rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Nivel_Criticidad"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Aire"/>
+            <rdf:Description rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Ciberespacio"/>
+            <rdf:Description rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Espacio"/>
+            <rdf:Description rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Mar"/>
+            <rdf:Description rdf:about="http://www.tgf-alejandro.cerezo.es/ontologias/MDO#Tierra"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
