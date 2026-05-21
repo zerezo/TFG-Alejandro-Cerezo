@@ -1,61 +1,56 @@
-# TFG-Alejandro-Cerezo
-Repositorio que alberga el código ejecutable del trabajo fin de grado del GITST
-# Simulador de Operaciones Multidominio (MDO) - V4.0 Final
+# Simulador de Operaciones Multidominio (MDO) - V5.0 (Hardened & Modular)
 
-![Versión](https://img.shields.io/badge/Versi%C3%B3n-4.0_Final-blue)
-![Ingeniería](https://img.shields.io/badge/TFG-Ingenier%C3%ADa_Telecomunicaciones-orange)
-![Framework](https://img.shields.io/badge/Marco-NIST_SP_800--30-red)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
+[![Ontology](https://img.shields.io/badge/OWL_2_DL-Protégé-orange.svg)](https://protege.stanford.edu/)
+[![Framework](https://img.shields.io/badge/NIST-SP_800--30-success.svg)](https://csrc.nist.gov/publications/detail/sp/800-30/rev-1/final)
 
-## 1. Descripción del Proyecto
-Este proyecto constituye la versión final del **Simulador de Operaciones Multidominio (MDO)** desarrollado para el Trabajo Fin de Grado[cite: 1]. El sistema permite modelar escenarios militares complejos donde interactúan activos y amenazas en los dominios de Tierra, Aire, Mar, Espacio y Ciberespacio[cite: 1, 2].
+## 📌 Descripción del Proyecto
 
-La gran innovación de esta **Versión 4.0** es el salto de una lógica imperativa (basada en cálculos manuales en Python) a un **Sistema Experto basado en Inferencia Semántica**[cite: 1]. El sistema utiliza el razonador lógico **HermiT** para determinar el éxito o fracaso de una misión mediante el análisis de un grafo de conocimiento, eliminando la necesidad de lógica condicional rígida en el código fuente[cite: 1, 9].
+Este repositorio contiene el código fuente, la base de conocimiento y los escenarios de prueba del **Simulador de Riesgos de Ciberseguridad para Operaciones Multidominio (MDO)**, desarrollado como Trabajo Fin de Grado en Ingeniería de Tecnologías y Servicios de Telecomunicación (ETSIT-UPM)[cite: 14].
 
-## 2. Instalación y Configuración (Windows)
+El sistema consiste en un Sistema Basado en Conocimiento (KBS) con una arquitectura de software híbrida[cite: 14]. Combina un motor de inferencia semántica (Lógica Descriptiva en OWL) para la clasificación de topologías de red interconectadas, con un orquestador en Python que implementa las métricas deterministas de la matriz de riesgos del estándar norteamericano **NIST SP 800-30**[cite: 8]. 
 
-Para desplegar el simulador en un entorno local Windows, siga estos pasos:
+El simulador ingiere un escenario táctico, evalúa los vectores de amenaza y calcula de forma autónoma la resiliencia sistémica de los dominios operativos (Tierra, Mar, Aire, Espacio y Ciberespacio), delegando el veredicto estratégico global al razonador HermiT[cite: 8, 14].
 
-### Tecnologías Necesarias
-*   **Python 3.10+**: Motor de ejecución para la integración y generación de reportes[cite: 9].
-*   **Java Runtime Environment (JRE)**: Requisito indispensable para que el razonador semántico (`HermiT`) funcione correctamente[cite: 1, 9].
-*   **Archivos Base**: Asegúrese de tener en el mismo directorio:
-    *   `script_4.0_2.py`: Script principal de ejecución[cite: 9].
-    *   `Ontologia_31012026_2.rdf`: Ontología en formato OWL[cite: 3].
-    *   `mision_2.json`: Configuración del escenario táctico[cite: 2].
+## 🏗️ Arquitectura y Flujo de Ejecución
 
-### Pasos de Instalación
-1.  **Instalar dependencias**: Ejecute el siguiente comando en su terminal:
-    ```bash
-    pip install owlready2 fpdf
-    ```
-2.  **Verificación**: Asegúrese de que el archivo `mision_2.json` esté configurado con los activos y niveles de criticidad deseados[cite: 2].
-3.  **Ejecución**: Lance el simulador mediante:
-    ```bash
-    python script_4.0_2.py
-    ```
+1. **Ingesta y Validación (JSON):** Carga dinámica de activos tácticos y amenazas, validada en tiempo de ejecución de forma estricta (Fail-Fast) contra el esquema derivado de la TBox[cite: 8, 13].
+2. **Razonamiento Topológico (OWL 2 DL):** HermiT escanea intersecciones y clasifica axiomáticamente los individuos expuestos dentro de la clase `ActivoEnRiesgo`[cite: 13, 14].
+3. **Puente Cuantitativo (Python + NIST):** Cálculo de la afectación real frente al umbral dinámico de tolerancia de cada entorno (basado en su nivel de criticidad $C1-C5$)[cite: 8, 13].
+4. **Subsunción y Veredicto Global:** Inyección de *Data Properties* en la ontología; HermiT asume el control para deducir el colapso funcional (`Mision_Fracasada` o `Mision_Degradada`)[cite: 8, 13].
+5. **Generación de Inteligencia:** Extracción forense desde el grafo inferido (Única Fuente de Verdad) hacia un informe automatizado (PDF)[cite: 8, 13].
 
-## 3. Tecnologías y Ciclo de Vida del Desarrollo
+## 📂 Estructura del Repositorio
 
-El sistema se basa en una arquitectura de "Delegación de Inteligencia" dividida en las siguientes fases técnicas:
+* `script.py`: Orquestador principal del sistema. Integra la lectura del json, el puente aritmético NIST, las llamadas de subsunción a `owlready2` y la invocación de `fpdf`[cite: 13].
+* `OntologiaMDO.rdf`: Modelo semántico formal base (TBox). Desarrollado en Protégé, contiene la jerarquía de clases disjuntas, propiedades (Data y Object Properties) y las aserciones de Lógica Descriptiva[cite: 8, 10].
+* `mision.json`: Archivo de parametrización modular. Permite inyectar inventarios tácticos, vectores de amenaza y métricas base sin modificar el código lógico[cite: 8, 9].
+* `requirements.txt`: Manifiesto estricto de dependencias de la arquitectura.
 
-### A. Modelado del Conocimiento (OWL & Protégé)
-Se utiliza una ontología formal en OWL (`Ontologia_31012026_2.rdf`) para definir la taxonomía de la misión[cite: 3].
-*   **Lógica de Descripción (DL)**: Se han definido clases disjuntas y reglas de inferencia para determinar estados de misión (Fracasada, Degradada, Exitosa) basándose en la afectación de dominios estratégicos.
+## 📦 Archivos Generados en Ejecución
 
-### B. Análisis de Riesgos Cuantitativo (NIST SP 800-30)
-El sistema implementa el rigor matemático del framework NIST para evaluar el impacto de las amenazas[cite: 1].
-*   **Resiliencia Dinámica**: Se calcula el umbral de tolerancia de cada dominio mediante la fórmula:  
-    $Umbral = (6 - Nivel\_Criticidad) \times Factor\_Tolerancia\_Base$[cite: 1].
-*   **Inyección de Datos**: Python calcula los porcentajes de daño real y los inyecta en las propiedades de datos de la ontología (`tieneAfectacionReal`)[cite: 1, 9].
+Tras la ejecución exitosa del sistema, se instancian los siguientes artefactos en el directorio raíz:
+* `Report_<Titulo_Mision>_V5.pdf`: Informe forense automatizado estructurado en 5 bloques analíticos (Contexto, Inventario, Inferencia Semántica, Impacto NIST y Resolución de la Misión)[cite: 13].
+* `Grafo_Inferido_Mision_Operativa_<UUID>.owl`: Evidencia criptográfica del grafo de conocimiento. Contiene la instanciación topológica y todas las relaciones de estado deducidas (A-Box poblada), sirviendo como rastro de auditoría inmutable[cite: 13].
 
-### C. Inferencia Semántica (HermiT)
-El núcleo de la Versión 4.0 es la delegación de la decisión final al razonador lógico[cite: 1].
-*   **Inferencia de Segundo Orden**: El razonador analiza si el daño inyectado supera el umbral calculado y clasifica automáticamente el dominio como `Comprometido` o `Degradado`[cite: 1, 9].
+## ⚙️ Instalación y Ejecución
 
-### D. Generación de Informes Técnicos (FPDF)
-La salida oficial del sistema son reportes PDF detallados (ej. `Report_Operación_Muro_Azul_Defensa_Costera_V4_Definitivo_2.pdf`)[cite: 8, 9].
-*   **Single Source of Truth**: El informe se genera leyendo exclusivamente las inferencias realizadas por la ontología, garantizando que el veredicto tenga respaldo lógico formal[cite: 1].
+Es estrictamente recomendable aislar el entorno de despliegue mediante un entorno virtual (`venv`) para no comprometer la pureza de las bibliotecas del sistema, especialmente por la dependencia subyacente de la JVM para el razonador de `owlready2`.
 
----
-**Autor:** Alejandro Cerezo  
-**Proyecto:** Trabajo Fin de Grado - Ingeniería de Telecomunicaciones (2026)[cite: 1].
+```bash
+# 1. Clonar el repositorio
+git clone <URL_DEL_REPOSITORIO>
+cd Simulador-MDO
+
+# 2. Crear y activar el entorno virtual
+python -m venv venv
+# En Windows:
+venv\Scripts\activate
+# En Linux/macOS:
+source venv/bin/activate
+
+# 3. Instalar las dependencias estrictas
+pip install -r requirements.txt
+
+# 4. Ejecutar la simulación
+python script.py
