@@ -1,0 +1,30 @@
+{
+    "configuracion_mision": {
+        "titulo": "Mision General Hibrida Limite",
+        "descripcion": "Evaluacion de resiliencia en condiciones de frontera para el analisis de transiciones de estado semanticas bajo el marco NIST SP 800-30.",
+        "factor_tolerancia_base": 20,
+        "niveles_criticidad": {
+            "Tierra": 1,
+            "Mar": 1,
+            "Aire": 1,
+            "Espacio": 1,
+            "Ciberespacio": 5
+        }
+    },
+    "activos": [
+        { "id": "DATACENTER_NODO_A", "tipo": "DataCenter", "dominio": "Ciberespacio" },
+        { "id": "DATACENTER_NODO_B", "tipo": "DataCenter", "dominio": "Ciberespacio" },
+        { "id": "DB_TACTICA_INTEGRADA", "tipo": "Datos", "dominio": "Ciberespacio" },
+        { "id": "DB_TACTICA_INTEGRADA_1", "tipo": "Datos", "dominio": "Ciberespacio" },
+                { "id": "DB_TACTICA_INTEGRADA_2", "tipo": "Datos", "dominio": "Ciberespacio" },
+                        { "id": "DB_TACTICA_INTEGRADA_3", "tipo": "Datos", "dominio": "Ciberespacio" },
+                                { "id": "DB_TACTICA_INTEGRADA_4", "tipo": "Datos", "dominio": "Ciberespacio" },
+
+        { "id": "SENSOR_IOT_PERIMETRAL", "tipo": "Sensor", "dominio": "Ciberespacio" },
+        { "id": "SENSOR_IOT_PERIMETRAL_2", "tipo": "Sensor", "dominio": "Ciberespacio" },
+        { "id": "PASARELA_ENLACE_TTACTICO", "tipo": "Software", "dominio": "Ciberespacio" }
+    ],
+    "amenazas": [
+        { "id": "RANSOM_TACTICO", "tipo": "Ramsomware", "dominio_despliegue": "Ciberespacio" }
+    ]
+}
